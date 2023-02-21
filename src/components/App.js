@@ -7,6 +7,7 @@ function App() {
     min: 0,
     sec: 0,
   });
+  const [reseted, setReseted] = useState(true);
   const [int, setInt] = useState();
   const [started, setStarted] = useState(false);
 
@@ -16,6 +17,7 @@ function App() {
   const start = () => {
     setInt(setInterval(stopwatch, 1000));
     setStarted(true);
+    setReseted(false);
   };
 
   const stop = () => {
@@ -30,6 +32,7 @@ function App() {
       sec: 0,
     });
     stop();
+    setReseted(true);
   };
 
   const stopwatch = () => {
@@ -56,11 +59,15 @@ function App() {
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
         : {time.sec === 0 ? "00" : time.sec}
       </p>
-      <button onClick={start} disabled={started ? true : false}>
+      <button onClick={start} disabled={started}>
         Start
       </button>
-      <button onClick={reset}>Reset</button>
-      <button onClick={stop}>Stop</button>
+      <button onClick={reset} disabled={reseted}>
+        Reset
+      </button>
+      <button onClick={stop} disabled={!started}>
+        Stop
+      </button>
     </>
   );
 }
