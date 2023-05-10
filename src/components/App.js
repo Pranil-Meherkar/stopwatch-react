@@ -59,10 +59,10 @@ function App() {
   };
   return (
     <>
-      <MetaDecorator title={"example title"}
+      {/* <MetaDecorator title={"example title"}
         description={"example Description"}
         imageUrl={"https://picsum.photos/400/200"}
-        imageAlt={"image of size 400 x 200"} />
+        imageAlt={"image of size 400 x 200"} /> */}
       <h1>Stopwatch</h1>
       <p id="stopwatch">
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
