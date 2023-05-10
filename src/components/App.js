@@ -9,6 +9,9 @@ import {
 
 import { useEffect, useState } from "react";
 import MetaDecorator from './MetaDecorator';
+import { MetaTags } from "react-meta-tags";
+import { Helmet } from "react-helmet";
+import image from "./airbus_a330_300_516434.jpg"
 
 function App() {
   const [time, setTime] = useState({
@@ -78,10 +81,21 @@ function App() {
   };
   return (
     <>
-      <MetaDecorator title={"example title"}
+      {/* <MetaDecorator title={"example title"}
         description={"example Description"}
         imageUrl={"https://picsum.photos/720/480"}
-        imageAlt={"image of size 700 x 500"} />
+        imageAlt={"image of size 700 x 500"} /> */}
+
+      <Helmet>
+        <title>Metatags testing Title</title>
+        <meta property="og:title" content="Metatags test Title" />
+        <meta property="og:image" content={image} />
+      </Helmet>
+      <MetaTags>
+        <meta property="og:description" content="Metatags testing Description" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+      </MetaTags>
       <h1>Stopwatch</h1>
       <p id="stopwatch">
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
@@ -127,6 +141,9 @@ function App() {
                         <FacebookShareButton url={"https://stopwatch-react-nine.vercel.app/"} quote={"Quote text"}>
                         <span className="social-icon br" alt="">F</span>
                         </FacebookShareButton>
+                        <a href="https://web.whatsapp.com/send?text= Please Visit https://stopwatch-react-nine.vercel.app/"  
+rel="nofollow noopener" target="_blank"
+className="share-icon">Share via Whatsapp</a>
                       </span>
                     )}
 
