@@ -1,5 +1,6 @@
 import "../App.css";
 import { useEffect, useState } from "react";
+import MetaDecorator from './MetaDecorator';
 
 function App() {
   const [time, setTime] = useState({
@@ -20,9 +21,9 @@ function App() {
     setReseted(false);
   };
 
-  useEffect(() => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }, [])
+  // useEffect(() => {
+  //   (window.adsbygoogle = window.adsbygoogle || []).push({});
+  // }, [])
 
   const stop = () => {
     clearInterval(int);
@@ -58,6 +59,10 @@ function App() {
   };
   return (
     <>
+      <MetaDecorator title={"example title"}
+        description={"example Description"}
+        imageUrl={"https://picsum.photos/400/200"}
+        imageAlt={"image of size 400 x 200"} />
       <h1>Stopwatch</h1>
       <p id="stopwatch">
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
