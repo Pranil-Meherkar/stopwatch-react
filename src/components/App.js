@@ -61,7 +61,7 @@ function App() {
     <>
       <MetaDecorator title={"example title"}
         description={"example Description"}
-        imageUrl={"https://picsum.photos/400/200"}
+        imageUrl={"https://picsum.photos/720/480"}
         imageAlt={"image of size 400 x 200"} />
       <h1>Stopwatch</h1>
       <p id="stopwatch">
