@@ -78,12 +78,12 @@ function App() {
         Stop
       </button>
 
-      <ins class="adsbygoogle"
+      {/* <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-3224499592102052"
      data-ad-slot="2987459441"
      data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-full-width-responsive="true"></ins> */}
     </>
   );
 }
