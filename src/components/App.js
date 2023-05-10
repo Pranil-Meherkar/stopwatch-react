@@ -1,4 +1,12 @@
 import "../App.css";
+import { Share2 } from "react-feather";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  EmailShareButton,
+} from "react-share";
+
 import { useEffect, useState } from "react";
 import MetaDecorator from './MetaDecorator';
 
@@ -12,6 +20,9 @@ function App() {
   const [int, setInt] = useState();
   const [started, setStarted] = useState(false);
 
+
+  const [expandedIndex, setExpandedIndex] = useState(-1);
+
   let sec = time.sec,
     min = time.min,
     hrs = time.hrs;
@@ -24,6 +35,14 @@ function App() {
   // useEffect(() => {
   //   (window.adsbygoogle = window.adsbygoogle || []).push({});
   // }, [])
+
+  const handleShare = (index) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(-1);
+    } else {
+      setExpandedIndex(index);
+    }
+  };
 
   const stop = () => {
     clearInterval(int);
@@ -62,7 +81,7 @@ function App() {
       <MetaDecorator title={"example title"}
         description={"example Description"}
         imageUrl={"https://picsum.photos/720/480"}
-        imageAlt={"image of size 400 x 200"} />
+        imageAlt={"image of size 700 x 500"} />
       <h1>Stopwatch</h1>
       <p id="stopwatch">
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
@@ -77,6 +96,39 @@ function App() {
       <button onClick={stop} disabled={!started}>
         Stop
       </button>
+
+      <Share2
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleShare(1)
+                        }}
+                        className="share-icon"
+                        color="#ED1B24"
+                        fill="#ED1B24"
+                      />
+
+{expandedIndex === 1 && (
+                      <span className="social-icons-div">
+                        <EmailShareButton
+                          url={"https://stopwatch-react-nine.vercel.app/"}
+                          body={"body text"}
+                        >
+                          <span className="social-icon br" alt="">E</span>
+                        </EmailShareButton>
+
+                        <WhatsappShareButton url={"https://stopwatch-react-nine.vercel.app/"} quote={"Quote text"}>
+                        <span className="social-icon br" alt="">W</span>
+                        </WhatsappShareButton>
+
+                        <TwitterShareButton url={"https://stopwatch-react-nine.vercel.app/"} title={"News"}>
+                        <span className="social-icon br" alt="">T</span>
+                        </TwitterShareButton>
+
+                        <FacebookShareButton url={"https://stopwatch-react-nine.vercel.app/"} quote={"Quote text"}>
+                        <span className="social-icon br" alt="">F</span>
+                        </FacebookShareButton>
+                      </span>
+                    )}
 
       {/* <ins class="adsbygoogle"
      style="display:block"

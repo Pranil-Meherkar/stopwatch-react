@@ -15,3 +15,18 @@ button{
   background-color: aqua;
 }
 
+.social-icons-div {
+  position: absolute;
+  left: 19vw;
+  background-color: #ffffff;
+  padding: 0.5vw 1vw;
+  display: flex;
+  gap: 1vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.social-icon {
+  width: 3.5vw;
+  cursor: pointer;
+  padding-right: 1vw;
+}
