@@ -1,5 +1,5 @@
 import "../App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [time, setTime] = useState({
@@ -19,6 +19,10 @@ function App() {
     setStarted(true);
     setReseted(false);
   };
+
+  useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }, [])
 
   const stop = () => {
     clearInterval(int);
@@ -68,6 +72,13 @@ function App() {
       <button onClick={stop} disabled={!started}>
         Stop
       </button>
+
+      <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3224499592102052"
+     data-ad-slot="2987459441"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
     </>
   );
 }
