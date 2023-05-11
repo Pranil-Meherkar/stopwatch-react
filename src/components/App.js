@@ -94,7 +94,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={"https://stopwatch-react-nine.vercel.app" + window.location.pathname + window.location.search}
+          content={"stopwatch-react-nine.vercel.app" + window.location.pathname + window.location.search}
         />
       </Helmet>
       <MetaTags>
