@@ -88,13 +88,17 @@ function App() {
 
       <Helmet>
         <title>Metatags testing Title</title>
-        <meta property="og:title" content="Metatags test Title" />
-        <meta property="og:image" content={image} />
+        <meta property="og:title" content="Metatags test Title Metatags test Title" />
+        <meta property="og:image" content={"https://picsum.photos/1200/630"} />
+        <meta property="og:description" content="Metatags testing Description Metatags testing Description Metatags testing Description Metatags testing Description" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={"https://stopwatch-react-nine.vercel.app" + window.location.pathname + window.location.search}
+        />
       </Helmet>
       <MetaTags>
-        <meta property="og:description" content="Metatags testing Description" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
+        
       </MetaTags>
       <h1>Stopwatch</h1>
       <p id="stopwatch">
