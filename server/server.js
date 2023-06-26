@@ -28,6 +28,6 @@ app.use("^/$", (req, res, next) => {
 
 app.use(express.static(path.resolve(__dirname, '..', 'build')))
 
-app.listen(PORT, () => {
-  console.log(`App launched on ${PORT}`);
+app.listen("https://stopwatch-react-ssr.vercel.app/", () => {
+  console.log(`App launched on ${"https://stopwatch-react-ssr.vercel.app/"}`);
 });
