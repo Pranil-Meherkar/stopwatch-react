@@ -139,24 +139,24 @@ function App() {
 {expandedIndex === 1 && (
                       <span className="social-icons-div">
                         <EmailShareButton
-                          url={"https://stopwatch-react-nine.vercel.app/"}
+                          url={"https://stopwatch-react-ssr.vercel.app/"}
                           body={"body text"}
                         >
                           <span className="social-icon br" alt="">E</span>
                         </EmailShareButton>
 
-                        <WhatsappShareButton url={"https://stopwatch-react-nine.vercel.app/"} quote={"Quote text"}>
+                        <WhatsappShareButton url={"https://stopwatch-react-ssr.vercel.app/"} quote={"Quote text"}>
                         <span className="social-icon br" alt="">W</span>
                         </WhatsappShareButton>
 
-                        <TwitterShareButton url={"https://stopwatch-react-nine.vercel.app/"} title={"News"}>
+                        <TwitterShareButton url={"https://stopwatch-react-ssr.vercel.app/"} title={"News"}>
                         <span className="social-icon br" alt="">T</span>
                         </TwitterShareButton>
 
-                        <FacebookShareButton url={"https://stopwatch-react-nine.vercel.app/"} quote={"Quote text"}>
+                        <FacebookShareButton url={"https://stopwatch-react-ssr.vercel.app/"} quote={"Quote text"}>
                         <span className="social-icon br" alt="">F</span>
                         </FacebookShareButton>
-                        <a href="https://web.whatsapp.com/send?text= Please Visit https://stopwatch-react-nine.vercel.app/"  
+                        <a href="https://web.whatsapp.com/send?text= Please Visit https://stopwatch-react-ssr.vercel.app/"  
 rel="nofollow noopener" target="_blank"
 className="share-icon">Share via Whatsapp</a>
                       </span>
