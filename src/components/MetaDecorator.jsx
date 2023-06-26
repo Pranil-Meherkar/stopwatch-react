@@ -8,10 +8,10 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => (
     <meta property="og:title" content={title} />
     <meta name="description" content={description} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={"https://picsum.photos/1200/630"} />
+    <meta property="og:image" content={imageUrl} />
     <meta
       property="og:url"
-      content={"https://stopwatch-react-nine.vercel.app" + window.location.pathname + window.location.search}
+      content={"https://stopwatch-react-nine.vercel.app"}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image:alt" content={imageAlt} />

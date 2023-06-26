@@ -1,4 +1,5 @@
 import "../App.css";
+import React from 'react';
 import { Share2 } from "react-feather";
 import {
   FacebookShareButton,
@@ -22,6 +23,11 @@ function App() {
   const [reseted, setReseted] = useState(true);
   const [int, setInt] = useState();
   const [started, setStarted] = useState(false);
+  const [metaData, setMetaData] = useState({
+    title: "some initial title",
+    description: "some initial description",
+    imageUrl: "https://wallpapers.com/images/featured/iron-man-ouqxo5w2b59h0042.webp"
+  });
 
 
   const [expandedIndex, setExpandedIndex] = useState(-1);
@@ -81,12 +87,14 @@ function App() {
   };
   return (
     <>
-      {/* <MetaDecorator title={"example title"}
-        description={"example Description"}
-        imageUrl={"https://picsum.photos/720/480"}
-        imageAlt={"image of size 700 x 500"} /> */}
+      <MetaDecorator 
+        title={metaData.title}
+        description={metaData.description}
+        imageUrl={metaData.imageUrl}
+        imageAlt={"image of size 700 x 500"} 
+      />
 
-      <Helmet>
+      {/* <Helmet>
         <title>Metatags testing Title</title>
         <meta property="og:title" content="Metatags test Title Metatags test Title" />
         <meta property="og:image" content={"https://picsum.photos/1200/630"} />
@@ -94,14 +102,10 @@ function App() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={
-           window.location.pathname + window.location.search
-          }
+          content={"https://stopwatch-react-nine.vercel.app/"
+        }
         />
-      </Helmet>
-      <MetaTags>
-        
-      </MetaTags>
+      </Helmet> */}
       <h1>Stopwatch</h1>
       <p id="stopwatch">
         {time.hrs === 0 ? "00" : time.hrs} : {time.min === 0 ? "00" : time.min}{" "}
@@ -121,6 +125,11 @@ function App() {
                         onClick={(e) => {
                           e.stopPropagation()
                           handleShare(1)
+                          setMetaData({
+                            title: "after click title",
+                            description: "after click description",
+                            imageUrl: "https://wallpapers.com/images/hd/spiderman-with-web-on-red-usbnr6ka34o9s2mb.webp"
+                          })
                         }}
                         className="share-icon"
                         color="#ED1B24"
