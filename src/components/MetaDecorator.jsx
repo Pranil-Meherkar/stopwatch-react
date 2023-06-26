@@ -11,7 +11,7 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => (
     <meta property="og:image" content={imageUrl} />
     <meta
       property="og:url"
-      content={"https://stopwatch-react-nine.vercel.app"}
+      content={"https://stopwatch-react-ssr.vercel.app/"}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image:alt" content={imageAlt} />
